@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools==78.1.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "capability-guard"
+version = "0.1.0"
+description = "MAC-authenticated least-privilege capabilities with atomic local effects"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = []
+
+[project.scripts]
+capability-guard = "capability_guard.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

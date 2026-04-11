@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "17",
+  "repository_name": "capability-guard",
+  "title": "Capability Guard",
+  "package": "capability_guard",
+  "language": "python",
+  "field": "Security and authorization",
+  "focus": "HMAC-authenticated least-privilege tool capabilities, policy attenuation, quotas and replay-safe local effects",
+  "ai_connection": "Constraining AI tool access outside model instructions",
+  "smoke_commands": [
+    {
+      "name": "demo",
+      "args": []
+    },
+    {
+      "name": "evaluate",
+      "args": []
+    }
+  ],
+  "layout": {
+    "docs_root": "security",
+    "tests_root": "adversarial",
+    "tools_root": "scripts",
+    "config_root": "policies",
+    "examples_root": "receipts",
+    "verifier": "scripts/check_authority.py",
+    "source_roots": [
+      "src"
+    ],
+    "documents": {
+      "architecture": "security/transaction-boundary.md",
+      "design": "security/credential-and-quota-rules.md",
+      "review": "security/authorization-regressions.md",
+      "experiments": "security/replay-and-quota-trials.md",
+      "publishing": "security/sharing-without-credentials.md",
+      "validation": "security/check-record.md"
+    }
+  }
+}
