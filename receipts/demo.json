@@ -1,0 +1,25 @@
+{
+  "experiment": "local fictional tool authorization",
+  "cryptography": "standard HMAC-SHA256; symmetric MAC, not a public signature",
+  "effect": {
+    "committed": true,
+    "operation": "note:append",
+    "resource": "lab/public",
+    "result": {
+      "appended_bytes": 24,
+      "resource_bytes": 24
+    }
+  },
+  "replay_denied": true,
+  "private_resource_denied": true,
+  "shared_parent_usage": {
+    "calls": 1,
+    "units": 24,
+    "revoked": false
+  },
+  "secrets_reported": false,
+  "limits": [
+    "Trusted issuer owns HMAC keys; holders cannot attenuate without issuer reissuance.",
+    "Effect and quotas are atomic only inside this SQLite database; no OS sandbox or remote exactly-once guarantee."
+  ]
+}
