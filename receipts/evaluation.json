@@ -1,0 +1,79 @@
+{
+  "experiment": "synthetic adversarial local authorization contracts",
+  "case_count": 17,
+  "passed": 17,
+  "cases": [
+    {
+      "scenario": "allowed",
+      "contract_satisfied": true
+    },
+    {
+      "scenario": "wrong-resource",
+      "contract_satisfied": true
+    },
+    {
+      "scenario": "wrong-scope",
+      "contract_satisfied": true
+    },
+    {
+      "scenario": "expiry",
+      "contract_satisfied": true
+    },
+    {
+      "scenario": "future",
+      "contract_satisfied": true
+    },
+    {
+      "scenario": "forgery",
+      "contract_satisfied": true
+    },
+    {
+      "scenario": "replay",
+      "contract_satisfied": true
+    },
+    {
+      "scenario": "revocation",
+      "contract_satisfied": true
+    },
+    {
+      "scenario": "ancestor-revocation",
+      "contract_satisfied": true
+    },
+    {
+      "scenario": "key-revocation",
+      "contract_satisfied": true
+    },
+    {
+      "scenario": "widen-scopes",
+      "contract_satisfied": true
+    },
+    {
+      "scenario": "widen-quota",
+      "contract_satisfied": true
+    },
+    {
+      "scenario": "shared-quota",
+      "contract_satisfied": true
+    },
+    {
+      "scenario": "unknown-operation",
+      "contract_satisfied": true
+    },
+    {
+      "scenario": "byte-budget",
+      "contract_satisfied": true
+    },
+    {
+      "scenario": "concurrent-quota",
+      "contract_satisfied": true
+    },
+    {
+      "scenario": "concurrent-replay",
+      "contract_satisfied": true
+    }
+  ],
+  "limits": [
+    "These cases are executable regression evidence, not a security certification.",
+    "Keys and bearer tokens are ephemeral and omitted from reports."
+  ]
+}
