@@ -1,0 +1,23 @@
+{
+  "method": "temporary source mutations; working source unchanged",
+  "mutations": [
+    {
+      "mutation": "bypass-mac",
+      "killed": true,
+      "returncode": 1,
+      "evidence": "===============================================================\nFAIL: test_all_synthetic_contracts (test_authority.AuthorityTests.test_all_synthetic_contracts)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/tmp066j63og/project/adversarial/test_authority.py\", line 259, in test_all_synthetic_contracts\n    self.assertEqual(report[\"passed\"], report[\"case_count\"])\nAssertionError: 16 != 17\n\n======================================================================\nFAIL: test_forgery_tampered_claims_and_unknown_key (test_authority.AuthorityTests.test_forgery_tampered_claims_and_unknown_key) (value='eyJhbmNlc3Rv')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/tmp066j63og/project/adversarial/test_authority.py\", line 74, in test_forgery_tampered_claims_and_unknown_key\n    with self.subTest(value=value[:12]), self.assertRaises(AuthorizationError):\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: AuthorizationError not raised\n\n======================================================================\nFAIL: test_forgery_tampered_claims_and_unknown_key (test_authority.AuthorityTests.test_forgery_tampered_claims_and_unknown_key)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/tmp066j63og/project/adversarial/test_authority.py\", line 78, in test_forgery_tampered_claims_and_unknown_key\n    with self.assertRaises(AuthorizationError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: AuthorizationError not raised\n\n----------------------------------------------------------------------\nRan 17 tests in 1.068s\n\nFAILED (failures=3)\n"
+    },
+    {
+      "mutation": "skip-ancestor-charging",
+      "killed": true,
+      "returncode": 1,
+      "evidence": "======================================================================\nFAIL: test_all_synthetic_contracts (test_authority.AuthorityTests.test_all_synthetic_contracts)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/tmp5ao7yzfq/project/adversarial/test_authority.py\", line 259, in test_all_synthetic_contracts\n    self.assertEqual(report[\"passed\"], report[\"case_count\"])\nAssertionError: 16 != 17\n\n======================================================================\nFAIL: test_descendants_share_ancestor_quota (test_authority.AuthorityTests.test_descendants_share_ancestor_quota)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/tmp5ao7yzfq/project/adversarial/test_authority.py\", line 133, in test_descendants_share_ancestor_quota\n    with self.assertRaises(AuthorizationError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: AuthorizationError not raised\n\n----------------------------------------------------------------------\nRan 17 tests in 2.145s\n\nFAILED (failures=2)\n"
+    },
+    {
+      "mutation": "reuse-stale-expiry-clock",
+      "killed": true,
+      "returncode": 1,
+      "evidence": "======================================================================\nFAIL: test_expiry_rechecked_after_waiting_for_transaction (test_authority.AuthorityTests.test_expiry_rechecked_after_waiting_for_transaction)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/tmpijw3kkpz/project/adversarial/test_authority.py\", line 200, in test_expiry_rechecked_after_waiting_for_transaction\n    with self.assertRaises(AuthorizationError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: AuthorizationError not raised\n\n----------------------------------------------------------------------\nRan 17 tests in 2.321s\n\nFAILED (failures=1)\n"
+    }
+  ]
+}
