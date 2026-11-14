@@ -1,0 +1,442 @@
+{
+  "schema_version": 3,
+  "generated_at_utc": "2026-11-15T04:20:30.412894+00:00",
+  "repository": "capability-guard",
+  "field": "Security and authorization",
+  "ai_connection": "Constraining AI tool access outside model instructions",
+  "language": "python",
+  "toolchain": null,
+  "source_sha256": "99f3601912e18c07b297aaa12429c5623667dffa7e40e32d9a35797a2170d1d3",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "scope": "implemented_systems_and_controlled_cpu_experiments",
+  "tests_discovered": 17,
+  "tests_skipped": 0,
+  "tests_executed": 17,
+  "external_provider_calls": false,
+  "passed": true,
+  "checks": [
+    {
+      "name": "metadata_and_documentation",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "lint",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "All checks passed!\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "adversarial",
+        "scripts"
+      ],
+      "seconds": 0.068449
+    },
+    {
+      "name": "format",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "7 files already formatted\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "src",
+        "adversarial",
+        "scripts"
+      ],
+      "seconds": 0.047569
+    },
+    {
+      "name": "compile",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "adversarial",
+        "scripts"
+      ],
+      "seconds": 0.116342
+    },
+    {
+      "name": "unit_tests",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "",
+      "stdout_truncated": false,
+      "stderr": "test_all_synthetic_contracts (test_authority.AuthorityTests.test_all_synthetic_contracts) ... ok\ntest_append_read_clear_and_literal_model_text (test_authority.AuthorityTests.test_append_read_clear_and_literal_model_text) ... ok\ntest_attenuation_cannot_widen_any_dimension (test_authority.AuthorityTests.test_attenuation_cannot_widen_any_dimension) ... ok\ntest_blocked_transaction_observes_committed_revocation (test_authority.AuthorityTests.test_blocked_transaction_observes_committed_revocation) ... ok\ntest_concurrent_quota_and_nonce_are_linearizable (test_authority.AuthorityTests.test_concurrent_quota_and_nonce_are_linearizable) ... ok\ntest_descendants_share_ancestor_quota (test_authority.AuthorityTests.test_descendants_share_ancestor_quota) ... ok\ntest_duplicate_noncanonical_unknown_and_wrong_typed_claims (test_authority.AuthorityTests.test_duplicate_noncanonical_unknown_and_wrong_typed_claims) ... ok\ntest_effect_failure_rolls_back_nonce_and_all_quotas (test_authority.AuthorityTests.test_effect_failure_rolls_back_nonce_and_all_quotas) ... ok\ntest_expiry_boundaries_and_identity (test_authority.AuthorityTests.test_expiry_boundaries_and_identity) ... ok\ntest_expiry_rechecked_after_waiting_for_transaction (test_authority.AuthorityTests.test_expiry_rechecked_after_waiting_for_transaction) ... ok\ntest_forgery_tampered_claims_and_unknown_key (test_authority.AuthorityTests.test_forgery_tampered_claims_and_unknown_key) ... ok\ntest_invalid_unicode_has_contract_error_and_no_effect (test_authority.AuthorityTests.test_invalid_unicode_has_contract_error_and_no_effect) ... ok\ntest_replay_is_bound_to_capability_even_for_different_operation (test_authority.AuthorityTests.test_replay_is_bound_to_capability_even_for_different_operation) ... ok\ntest_revocation_between_mac_verification_and_transaction (test_authority.AuthorityTests.test_revocation_between_mac_verification_and_transaction) ... ok\ntest_revoking_ancestor_and_old_rotated_key_disables_children (test_authority.AuthorityTests.test_revoking_ancestor_and_old_rotated_key_disables_children) ... ok\ntest_unregistered_valid_mac_and_bad_operation_contract (test_authority.AuthorityTests.test_unregistered_valid_mac_and_bad_operation_contract) ... ok\ntest_utf8_byte_quota_and_read_truncation (test_authority.AuthorityTests.test_utf8_byte_quota_and_read_truncation) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 1.119s\n\nOK\n",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "adversarial",
+        "-v"
+      ],
+      "seconds": 1.455796
+    },
+    {
+      "name": "demo",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "capability_guard",
+        "demo",
+        "--output",
+        "/tmp/cli-reports-fjgr5ak3/demo.json"
+      ],
+      "seconds": 0.195538,
+      "report": {
+        "experiment": "local fictional tool authorization",
+        "cryptography": "standard HMAC-SHA256; symmetric MAC, not a public signature",
+        "effect": {
+          "committed": true,
+          "operation": "note:append",
+          "resource": "lab/public",
+          "result": {
+            "appended_bytes": 24,
+            "resource_bytes": 24
+          }
+        },
+        "replay_denied": true,
+        "private_resource_denied": true,
+        "shared_parent_usage": {
+          "calls": 1,
+          "units": 24,
+          "revoked": false
+        },
+        "secrets_reported": false,
+        "limits": [
+          "Trusted issuer owns HMAC keys; holders cannot attenuate without issuer reissuance.",
+          "Effect and quotas are atomic only inside this SQLite database; no OS sandbox or remote exactly-once guarantee."
+        ]
+      }
+    },
+    {
+      "name": "evaluate",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "capability_guard",
+        "evaluate",
+        "--output",
+        "/tmp/cli-reports-fjgr5ak3/evaluate.json"
+      ],
+      "seconds": 0.519659,
+      "report": {
+        "experiment": "synthetic adversarial local authorization contracts",
+        "case_count": 17,
+        "passed": 17,
+        "cases": [
+          {
+            "scenario": "allowed",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "wrong-resource",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "wrong-scope",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "expiry",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "future",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "forgery",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "replay",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "revocation",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "ancestor-revocation",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "key-revocation",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "widen-scopes",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "widen-quota",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "shared-quota",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "unknown-operation",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "byte-budget",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "concurrent-quota",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "concurrent-replay",
+            "contract_satisfied": true
+          }
+        ],
+        "limits": [
+          "These cases are executable regression evidence, not a security certification.",
+          "Keys and bearer tokens are ephemeral and omitted from reports."
+        ]
+      }
+    },
+    {
+      "name": "wheel_build",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "Processing /workspace/ai-adjacent-repositories/capability-guard\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: capability-guard\n  Building wheel for capability-guard (pyproject.toml): started\n  Building wheel for capability-guard (pyproject.toml): finished with status 'done'\n  Created wheel for capability-guard: filename=capability_guard-0.1.0-py3-none-any.whl size=12522 sha256=25a509ababc24596c75b44ccd4da4dd8e8ac38def85b5599d02a1c3d2c30b7bd\n  Stored in directory: /home/agent/.cache/pip/wheels/70/2d/c6/bd6de112c9429b428122f07170f3494600e33d377066f6a8d2\nSuccessfully built capability-guard\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-deps",
+        "--no-build-isolation",
+        "--no-index",
+        "--wheel-dir",
+        "/tmp/cold-wheel-mpn17sw4/wheels",
+        "."
+      ],
+      "seconds": 1.195595
+    },
+    {
+      "name": "wheel_install",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "Processing ./wheels/capability_guard-0.1.0-py3-none-any.whl\nInstalling collected packages: capability-guard\nSuccessfully installed capability-guard-0.1.0\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/tmp/cold-wheel-mpn17sw4/environment/bin/python",
+        "-I",
+        "-m",
+        "pip",
+        "install",
+        "--no-deps",
+        "--no-index",
+        "/tmp/cold-wheel-mpn17sw4/wheels/capability_guard-0.1.0-py3-none-any.whl"
+      ],
+      "seconds": 0.543534
+    },
+    {
+      "name": "wheel_import_origin",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "/tmp/cold-wheel-mpn17sw4/environment/lib/python3.12/site-packages/capability_guard/__init__.py\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/tmp/cold-wheel-mpn17sw4/environment/bin/python",
+        "-I",
+        "-c",
+        "import capability_guard as module; import sys; from pathlib import Path; assert Path(module.__file__).resolve().is_relative_to(Path(sys.prefix).resolve()); print(module.__file__)"
+      ],
+      "seconds": 0.143563
+    },
+    {
+      "name": "wheel_demo",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/tmp/cold-wheel-mpn17sw4/environment/bin/python",
+        "-I",
+        "-m",
+        "capability_guard",
+        "demo",
+        "--output",
+        "/tmp/cli-reports-cgsd4n0b/demo.json"
+      ],
+      "seconds": 0.117907,
+      "report": {
+        "experiment": "local fictional tool authorization",
+        "cryptography": "standard HMAC-SHA256; symmetric MAC, not a public signature",
+        "effect": {
+          "committed": true,
+          "operation": "note:append",
+          "resource": "lab/public",
+          "result": {
+            "appended_bytes": 24,
+            "resource_bytes": 24
+          }
+        },
+        "replay_denied": true,
+        "private_resource_denied": true,
+        "shared_parent_usage": {
+          "calls": 1,
+          "units": 24,
+          "revoked": false
+        },
+        "secrets_reported": false,
+        "limits": [
+          "Trusted issuer owns HMAC keys; holders cannot attenuate without issuer reissuance.",
+          "Effect and quotas are atomic only inside this SQLite database; no OS sandbox or remote exactly-once guarantee."
+        ]
+      }
+    },
+    {
+      "name": "wheel_evaluate",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/tmp/cold-wheel-mpn17sw4/environment/bin/python",
+        "-I",
+        "-m",
+        "capability_guard",
+        "evaluate",
+        "--output",
+        "/tmp/cli-reports-cgsd4n0b/evaluate.json"
+      ],
+      "seconds": 0.430207,
+      "report": {
+        "experiment": "synthetic adversarial local authorization contracts",
+        "case_count": 17,
+        "passed": 17,
+        "cases": [
+          {
+            "scenario": "allowed",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "wrong-resource",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "wrong-scope",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "expiry",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "future",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "forgery",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "replay",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "revocation",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "ancestor-revocation",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "key-revocation",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "widen-scopes",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "widen-quota",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "shared-quota",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "unknown-operation",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "byte-budget",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "concurrent-quota",
+            "contract_satisfied": true
+          },
+          {
+            "scenario": "concurrent-replay",
+            "contract_satisfied": true
+          }
+        ],
+        "limits": [
+          "These cases are executable regression evidence, not a security certification.",
+          "Keys and bearer tokens are ephemeral and omitted from reports."
+        ]
+      }
+    }
+  ]
+}
