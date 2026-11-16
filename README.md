@@ -1,5 +1,16 @@
 # Capability Guard
 
+<!-- at-a-glance -->
+[![ci](https://github.com/pavan139/capability-guard/actions/workflows/ci.yml/badge.svg)](https://github.com/pavan139/capability-guard/actions/workflows/ci.yml) ![license: MIT](https://img.shields.io/badge/license-MIT-blue)
+
+| | |
+| --- | --- |
+| **Problem** | An LLM agent can be talked into calling tools it should not; a valid credential can still be unusable. |
+| **Result** | HMAC-signed, attenuable capabilities with quotas, revocation and replay protection; **17** adversarial tests. |
+| **Try it** | `pip install -e .` then `python -m capability_guard demo --output artifacts/receipt.json` |
+<!-- /at-a-glance -->
+
+
 An authentic credential can still be unusable. Its MAC may verify after its quota is exhausted or its issuer key is revoked. The distinction is the main interface in this library:
 
 ```text
