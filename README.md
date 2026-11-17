@@ -25,7 +25,7 @@ The trusted host issues HMAC-SHA256 capabilities for three fictional note operat
 Python 3.11+ and its standard library are sufficient.
 
 ```bash
-python -m pip install -e . --no-build-isolation
+python -m pip install -e .
 python -m capability_guard demo --output artifacts/receipt.json
 python -m capability_guard evaluate --output artifacts/contracts.json
 python -m unittest discover -s adversarial -v
